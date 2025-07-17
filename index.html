@@ -37,7 +37,7 @@
 
     .hero {
       background: radial-gradient(circle at 60% 30%, #ffffff 10%, #e3ecff 40%, #d0ddff 100%);
-      padding: 60px 30px 40px;
+      padding-top: 60px;
       color: #111;
     }
 
@@ -46,11 +46,39 @@
       margin: 0 auto;
     }
 
+    .container.hero-content.no-padding {
+      padding: 0 !important;
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: flex-end;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero img.headshot {
+      width: 30%;
+      height: auto;
+      object-fit: cover;
+      overflow-clip-margin: content-box;
+      overflow: clip;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      flex: 1;
+      padding: 40px 30px;
+    }
+
     .hero h1 {
       font-size: 36px;
       font-weight: bold;
       margin-bottom: 6px;
-      color: var(--mck-blue);
+      #color: var(--mck-blue);
     }
 
     .hero .role {
@@ -138,106 +166,158 @@
     .publication a:hover {
       text-decoration: underline;
     }
+
+    @media (max-width: 768px) {
+      .hero-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .hero-text {
+        padding: 20px 0;
+      }
+
+      .hero img.headshot {
+        width: 100%;
+        max-width: 240px;
+      }
+
+      .hero .links a {
+        display: block;
+        margin: 8px auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero .role {
+        font-size: 14px;
+      }
+
+      .container {
+        padding: 20px 16px;
+      }
+
+      .tag {
+        font-size: 12px;
+        padding: 5px 10px;
+      }
+
+      .job h3 {
+        font-size: 16px;
+      }
+
+      .job small {
+        font-size: 13px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <section class="hero">
-    <div class="container">
-      <h1>SALENA KETPUEAK</h1>
-      <div class="role">Data Solutions Consultant · Melbourne, Victoria, Australia</div>
-      <p class="summary">
-        Salena Ketpueak is a Data Solutions Consultant passionate about designing secure, scalable data platforms for financial services. With expertise in Databricks, multi-cloud infrastructure, and control frameworks, she bridges technical and business domains to deliver production-grade systems that drive strategic outcomes.
-      </p>
-      <div class="links">
-        <a href="mailto:salena.ketpueak@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-        <a href="https://linkedin.com/in/salena-ketpueak" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://github.com/salenakerrs" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-        <a href="https://medium.com/@salenakerrs" target="_blank"><i class="fab fa-medium"></i> Medium</a>
+    <div class="container hero-content no-padding">
+      <img src="https://github.com/salenakerrs/cv/blob/master/salena-headshot.png?raw=true" alt="Salena Ketpueak" class="headshot" />
+      <div class="hero-text">
+        <h1>SALENA KETPUEAK</h1>
+        <div class="role">Data Solutions Consultant · Melbourne, Victoria, Australia</div>
+        <p class="summary">
+          Salena Ketpueak is a Data Solutions Consultant passionate about designing secure, scalable data platforms for financial services. With expertise in Databricks, multi-cloud infrastructure, and control frameworks, she bridges technical and business domains to deliver production-grade systems that drive strategic outcomes.
+        </p>
+        <div class="links">
+          <a href="mailto:salena.ketpueak@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+          <a href="https://linkedin.com/in/salena-ketpueak" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/salenakerrs" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://medium.com/@salenakerrs" target="_blank"><i class="fab fa-medium"></i> Medium</a>
+        </div>
       </div>
     </div>
   </section>
 
   <main class="wrapper container">
 
-  <h2 class="section-title">Expertise Areas</h2>
-  <hr>
-  <div class="tags">
-    <span class="tag">Data Platform Architecture</span>
-    <span class="tag">Data Governance</span>
-    <span class="tag">Data Management</span>
-    <span class="tag">ETL</span>
-    <span class="tag">DevOps</span>
-    <span class="tag">Cloud</span>
-    <span class="tag">Consulting</span>
-  </div>
-
-  <h2 class="section-title">Professional Experience</h2>
-  <hr>
-
-  <div class="job">
-    <h3>ACCENTURE</h3>
-    <small>Data Engineering, Management & Governance Specialist — Thailand (Remote), Jun 2021 – Present</small>
-    <p>
-      Led and contributed to multiple cloud data initiatives for leading financial institutions, including the <strong>Wealth Analytics Services</strong>, <strong>Modernised Data Foundation</strong>, <strong>Cloud Data Integration</strong>, and <strong>Mobile Banking Applications</strong> programs. 
-      Designed secure and scalable data architectures across Azure and AWS, delivered production-grade <strong>ETL Frameworks</strong> using Databricks and PySpark, and implemented <strong>Data Access Control</strong> with Unity Catalog and role-based data security. 
-      Developed a 7-level <strong>Confidential Data Classification and Anonymisation</strong> model to support data governance and compliance at scale. Acted as sub-workstream lead managing cross-functional teams on multi-million AUD engagements.
-    </p>
+    <h2 class="section-title">Expertise Areas</h2>
+    <hr>
     <div class="tags">
-      <span class="tag">Databricks</span>
-      <span class="tag">Unity Catalog</span>
-      <span class="tag">Data Architecture</span>
-      <span class="tag">Data Engineering</span>
-      <span class="tag">ETL Framework</span>
-      <span class="tag">PySpark</span>
-      <span class="tag">SQL</span>
-      <span class="tag">RBAC</span>
-      <span class="tag">Data Security</span>
+      <span class="tag">Data Platform Architecture</span>
       <span class="tag">Data Governance</span>
       <span class="tag">Data Management</span>
-      <span class="tag">AWS</span>
-      <span class="tag">Azure</span>
-      <span class="tag">Google Coud</span>
-      <span class="tag">Banking</span>
+      <span class="tag">ETL</span>
+      <span class="tag">DevOps</span>
+      <span class="tag">Cloud</span>
       <span class="tag">Consulting</span>
     </div>
-  </div>
 
-  <div class="job">
-    <h3>LONDON STOCK EXCHANGE GROUP (LSEG)</h3>
-    <small>Senior Software Engineer — Thailand, Jun 2019 – Jun 2021</small>
-    <p>
-      Delivered scalable central systems for FX Conversational Dealing, supporting global trading desks across financial institutional clients.
-    </p>
-    <div class="tags">
-      <span class="tag">FX Trading</span>
-      <span class="tag">Java</span>
-      <span class="tag">C++</span>
-      <span class="tag">Linux</span>
-      <span class="tag">Windows Servers</span>
-      <span class="tag">Jenkins</span>
-      <span class="tag">RunDeck</span>
-      <span class="tag">DevOps</span>
-      <span class="tag">Scrum</span>
+    <h2 class="section-title">Professional Experience</h2>
+    <hr>
+
+    <div class="job">
+      <h3>ACCENTURE</h3>
+      <small>Data Engineering, Management & Governance Specialist — Thailand (Remote), Jun 2021 – Present</small>
+      <p>
+        Led and contributed to multiple cloud data initiatives for leading financial institutions, including the <strong>Wealth Analytics Services</strong>, <strong>Modernised Data Foundation</strong>, <strong>Cloud Data Integration</strong>, and <strong>Mobile Banking Applications</strong> programs. 
+        Designed secure and scalable data architectures across Azure and AWS, delivered production-grade <strong>ETL Frameworks</strong> using Databricks and PySpark, and implemented <strong>Data Access Control</strong> with Unity Catalog and role-based data security. 
+        Developed a 7-level <strong>Confidential Data Classification and Anonymisation</strong> model to support data governance and compliance at scale. Acted as sub-workstream lead managing cross-functional teams on multi-million AUD engagements.
+      </p>
+      <div class="tags">
+        <span class="tag">Databricks</span>
+        <span class="tag">Unity Catalog</span>
+        <span class="tag">Data Architecture</span>
+        <span class="tag">Data Engineering</span>
+        <span class="tag">ETL Framework</span>
+        <span class="tag">PySpark</span>
+        <span class="tag">SQL</span>
+        <span class="tag">RBAC</span>
+        <span class="tag">Data Security</span>
+        <span class="tag">Data Governance</span>
+        <span class="tag">Data Management</span>
+        <span class="tag">AWS</span>
+        <span class="tag">Azure</span>
+        <span class="tag">Google Cloud</span>
+        <span class="tag">Banking</span>
+        <span class="tag">Consulting</span>
+      </div>
     </div>
-  </div>
 
-  <h2 class="section-title">Certifications</h2>
-  <hr>
-  <p>Databricks Data Engineer Professional</p>
+    <div class="job">
+      <h3>LONDON STOCK EXCHANGE GROUP (LSEG)</h3>
+      <small>Senior Software Engineer — Thailand, Jun 2019 – Jun 2021</small>
+      <p>
+        Delivered scalable central systems for FX Conversational Dealing, supporting global trading desks across financial institutional clients.
+      </p>
+      <div class="tags">
+        <span class="tag">FX Trading</span>
+        <span class="tag">Java</span>
+        <span class="tag">C++</span>
+        <span class="tag">Linux</span>
+        <span class="tag">Windows Servers</span>
+        <span class="tag">Jenkins</span>
+        <span class="tag">RunDeck</span>
+        <span class="tag">DevOps</span>
+        <span class="tag">Scrum</span>
+      </div>
+    </div>
 
-  <h2 class="section-title">Publications</h2>
-  <hr>
-  <div class="publication">
-    <a href="https://medium.com/@salenakerrs/keeping-your-data-secure-with-rbac-on-azure-databricks-f749e78a1a12" target="_blank">
-      Keeping Your Data Secure with RBAC on Azure Databricks
-    </a>
-    <a href="https://medium.com/@salenakerrs/building-fine-grained-data-security-classification-and-anonymisation-on-databricks-4744f8448fde" target="_blank">
-      Building Fine-Grained Data Security, Classification and Anonymisation on Databricks
-    </a>
-  </div>
+    <h2 class="section-title">Certifications</h2>
+    <hr>
+    <p>Databricks Data Engineer Professional</p>
 
-</main>
+    <h2 class="section-title">Publications</h2>
+    <hr>
+    <div class="publication">
+      <a href="https://medium.com/@salenakerrs/keeping-your-data-secure-with-rbac-on-azure-databricks-f749e78a1a12" target="_blank">
+        Keeping Your Data Secure with RBAC on Azure Databricks
+      </a>
+      <a href="https://medium.com/@salenakerrs/building-fine-grained-data-security-classification-and-anonymisation-on-databricks-4744f8448fde" target="_blank">
+        Building Fine-Grained Data Security, Classification and Anonymisation on Databricks
+      </a>
+    </div>
 
+  </main>
 </body>
 </html>
